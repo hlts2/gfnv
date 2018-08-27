@@ -17,7 +17,7 @@ func BenchmarkStandardFnv32(b *testing.B) {
 }
 
 func BenchmarkGfnv32(b *testing.B) {
-	msg := []byte("hello world")
+	msg := "hello world"
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		_ = Fnv32(msg)
@@ -36,7 +36,7 @@ func BenchmarkStandardFnv64(b *testing.B) {
 }
 
 func BenchmarkGfnv64(b *testing.B) {
-	msg := []byte("hello world")
+	msg := "hello world"
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		_ = Fnv64(msg)

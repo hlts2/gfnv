@@ -1,5 +1,7 @@
 package gfnv
 
+import "unsafe"
+
 /**
 * see: https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
 **/
@@ -23,20 +25,22 @@ const (
 )
 
 // Fnv32 returns fnv32 hash value
-func Fnv32(message []byte) uint32 {
+func Fnv32(message string) uint32 {
 	hash := FnvOffsetBasis32
 
-	for i := 0; i < len(message); i++ {
-		hash = (FnvPrime32 * hash) ^ uint32(message[i])
+	for _, b := range *(*[]byte)(unsafe.Pointer(&message)) {
+		hash = (FnvPrime32 * hash) ^ uint32(b)
 	}
+
 	return hash
 }
 
 // Fnv64 returns fnv64 hash value
-func Fnv64(message []byte) uint64 {
+func Fnv64(message string) uint64 {
 	hash := FnvOffsetBasis64
-	for i := 0; i < len(message); i++ {
-		hash = (FnvPrime64 * hash) ^ uint64(message[i])
+
+	for _, b := range *(*[]byte)(unsafe.Pointer(&message)) {
+		hash = (FnvPrime64 * hash) ^ uint64(b)
 	}
 	return hash
 }
