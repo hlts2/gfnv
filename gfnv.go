@@ -6,7 +6,7 @@ import "unsafe"
 * see: https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
 **/
 
-// group of fnv offset basis
+// fnv offset basis
 const (
 	// FnvOffsetBasis32 represents fnv offset basis for 32bit
 	FnvOffsetBasis32 uint32 = 2166136261
@@ -15,7 +15,7 @@ const (
 	FnvOffsetBasis64 uint64 = 14695981039346656037
 )
 
-// group of fnv prime
+// fnv prime
 const (
 	// FnvPrime32 represents fnv prime for 32bit
 	FnvPrime32 uint32 = 16777619
