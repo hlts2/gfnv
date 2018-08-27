@@ -34,6 +34,6 @@ func TestFnv64a(t *testing.T) {
 	got2 := Fnv64a("hello world")
 
 	if got1 != got2 {
-		t.Errorf("Fnv32 is wrong. expected: %v, got: %v", got1, got2)
+		t.Errorf("Fnv32a is wrong. expected: %v, got: %v", got1, got2)
 	}
 }
