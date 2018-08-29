@@ -12,9 +12,7 @@ const (
 
 	// FnvOffsetBasis64 represents fnv offset basis for 64bit
 	FnvOffsetBasis64 uint64 = 14695981039346656037
-)
 
-const (
 	// FnvPrime32 represents fnv prime for 32bit
 	FnvPrime32 uint32 = 16777619
 
